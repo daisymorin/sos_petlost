@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+}
+
+.animals{
+  width: 20vw;
+  height: 50vh;
+  background-color: pink;
+}
+
+.imgAnimal{
+  width: 15vw;
+  height: 20vh;
+  object-fit: cover;
+}

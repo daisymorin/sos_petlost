@@ -1,0 +1,30 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block title %}SOS PETLOST{% endblock %}
+
+{% block content %}
+
+<h1>Les dernières publications</h1>
+
+<div class="container">
+
+    {% for animal in animals %}
+
+    <div class="animals">
+
+        <p>{{ animal.missing ? 'Diparus' : '' }}</p>
+        <p>{{ animal.found ? 'Trouvé' : '' }}</p>
+        <p ><img class="imgAnimal" src="{{ vich_uploader_asset(animal.image, 'file') }}" alt="{{ animal.name }}" /></p>        
+        <p>{{ animal.name }}</p>
+        <p>{{ animal.city }}</p>
+        <p>{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
+        <p>{% if animal.missing %}<a href="{{ path('showPerdu', {'id': animal.id}) }}">Voir</a>
+            {% else %} <a href="{{ path('showTrouve', {'id': animal.id}) }}">Voir</a></p>
+            {% endif %}
+
+    </div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}

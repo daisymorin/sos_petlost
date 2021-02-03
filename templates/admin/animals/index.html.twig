@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Animals index{% endblock %}
+
+{% block body %}
+    <h1>Animals index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Missing</th>
+                <th>Found</th>
+                <th>Name</th>
+                <th>Race</th>
+                <th>Sexe</th>
+                <th>Color</th>
+                <th>Microship</th>
+                <th>Sterelise</th>
+                <th>Description</th>
+                <th>Particularity</th>
+                <th>Address</th>
+                <th>Postcode</th>
+                <th>City</th>
+                <th>Date</th>
+                <th>Animal_found</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for animal in animals %}
+            <tr>
+                <td>{{ animal.id }}</td>
+                <td>{{ animal.missing ? 'Yes' : 'No' }}</td>
+                <td>{{ animal.found ? 'Yes' : 'No' }}</td>
+                <td>{{ animal.name }}</td>
+                <td>{{ animal.race }}</td>
+                <td>{{ animal.sexe }}</td>
+                <td>{{ animal.color }}</td>
+                <td>{{ animal.microship ? 'Yes' : 'No' }}</td>
+                <td>{{ animal.sterelise ? 'Yes' : 'No' }}</td>
+                <td>{{ animal.description }}</td>
+                <td>{{ animal.particularity }}</td>
+                <td>{{ animal.address }}</td>
+                <td>{{ animal.postcode }}</td>
+                <td>{{ animal.city }}</td>
+                <td>{{ animal.date ? animal.date|date('Y-m-d') : '' }}</td>
+                <td>{{ animal.animalFound ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('animals_show', {'id': animal.id}) }}">show</a>
+                    <a href="{{ path('animals_edit', {'id': animal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('animals_new') }}">Create new</a>
+{% endblock %}
