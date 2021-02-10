@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Animals{% endblock %}
+
+{% block body %}
+    <h1>Create new Animals</h1>
+
+    {{ include('user/annonce/_form.html.twig') }}
+
+    <a href="{{ path('annonces') }}">back to list</a>
+{% endblock %}

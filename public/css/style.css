@@ -1,15 +1,114 @@
+/* HEADER */
+header{
+  display: flex;
+  background-color: #C1DDE8;
+}
+
+.titre_principale {
+  display: flex;
+  flex-direction: column;
+  margin-top: -3vh;
+}
+
+.titre_principale h1 {
+  font-size: 20px;
+  color: #171730;
+  margin-left: 6vw;
+  margin-top: -4vh;
+}
+
+.logo{
+  width: 25vw;
+  height: 25vh;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin-top: 17vh;
+  padding-left: 3vw;
+}
+
+nav li {
+  margin-right: 3vw;
+}
+
+nav a {
+  color: #171730;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+nav a:hover, .show a:hover {
+  color: #191970;
+  border-bottom: 2px solid #191970;
+  
+}
+
+/* PAGE ACCEUIL, DISPARU, TROUVE ET MES ANNONCES */
+
+h2{
+  text-align: center;
+  color: #171730;
+  margin-top: 12vh;
+  font-size: 30px;
+}
 .container{
     display: flex;
+    height: 100vh;
+    margin-top: 8vh;
+    margin-left: 3vw;
+    margin-right: 3vw;
 }
 
 .animals{
-  width: 20vw;
-  height: 50vh;
-  background-color: pink;
+  width: 22vw;
+  height: 55vh;
+  background-color: #D2E8F1;
+  margin-right: 2vw;
+  margin-top: 5vh;
 }
 
 .imgAnimal{
-  width: 15vw;
-  height: 20vh;
+  width: 18vw;
+  height: 24vh;
   object-fit: cover;
+  padding-top: 1.2vh;
+}
+
+.info{
+  text-align: center;
+  padding-top: 1vh;
+  background-color: #ffffff;
+  color: #171730;
+  height: 4vh;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+  border-radius: 8px;
+}
+
+.info-img {
+  text-align: center;
+}
+
+.date-annonce {
+  display: flex;
+  font-size: 14px;
+  margin-top: -1.5vh;
+}
+
+.date, .show {
+  width: 20vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  text-align: center;
+  background-color: #ffffff;
+  color: #171730;
+  border-radius: 8px;
+}
+
+.show a {
+  text-decoration: none;
+  color: #171730
+  
 }

@@ -1,0 +1,29 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block title %}SOS PETLOST{% endblock %}
+
+{% block content %}
+
+ <a href="{{ path('new_annonce') }}">Create new</a>
+ <div class="container">
+
+    {% for animal in animals %}
+
+    <div class="animals">
+
+        <p>{{ animal.missing ? 'Diparus' : '' }}</p>
+        <p>{{ animal.found ? 'Trouvé' : '' }}</p>
+         <p ><img class="imgAnimal" src="{{ vich_uploader_asset(animal.image, 'file') }}" alt="{{ animal.name }}" /></p>        
+        <p>{{ animal.name }}</p>
+        <p>{{ animal.city }}</p>
+        <p>{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
+        <a href="{{ path('show-annonce', {'id': animal.id}) }}">show</a>
+        <a href="{{ path('edit-annonce', {'id': animal.id}) }}">edit</a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

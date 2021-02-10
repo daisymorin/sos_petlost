@@ -37,6 +37,7 @@ class AnimalsController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $animal->setDate(New \DateTime());
             $entityManager->persist($animal);
             $entityManager->flush();
 
@@ -68,6 +69,7 @@ class AnimalsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $animal->setDate(New \DateTime());
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('animals_index');

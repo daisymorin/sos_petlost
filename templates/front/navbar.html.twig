@@ -1,11 +1,38 @@
  <header>
 
+    <div class="titre_principale">
+        <p>
+            <img class="logo" src="../images/logo.png" alt="Logo de Sospetlost" />
+        </p>
+
+        <h1>SOS PETLOST</h1>
+
+    </div>
+
      <nav>
 
         <ul>
-            <li><a href="/animaux-disparus">Animal Perdu</a></li>
-             <li><a href="/animaux-trouve">Animal Retrouvé</a></li>
-              <li><a href="/animal-retrouve">Actualités</a></li>
+            <li><a href="{{path('home')}}">Accueil</a></li>
+            <li><a href="{{path('animaux-disparus')}}">Animal Perdu</a></li>
+             <li><a href={{path('animaux-trouve')}}>Animal Retrouvé</a></li>
+            <li><a href="/">Actualités</a></li>
+
+             {% if is_granted('ROLE_USER') %}
+                 <li><a href="{{path('annonces')}}">Mes annonces</a></li>
+             {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+                 <li><a href="{{path('animals_index')}}">Admin</a></li>
+            {% endif %}
+
+             {% if is_granted('ROLE_USER') %}
+                <li><a href="/logout">Déconnexion</a></li>
+            {% else %}
+                <li><a href="/login">Connexion</a></li>
+                 <li><a href="/register">Inscription</a></li>
+             {% endif %}
+  
         </ul>
     </nav>
+
 </header>
