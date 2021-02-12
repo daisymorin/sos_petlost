@@ -39,7 +39,7 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover, .show a:hover {
+nav a:hover, .show a:hover,  .btn-retour a:hover {
   color: #191970;
   border-bottom: 2px solid #191970;
   
@@ -49,7 +49,7 @@ nav a:hover, .show a:hover {
 
 h2{
   text-align: center;
-  color: #171730;
+  color: #1b1b5b;
   margin-top: 12vh;
   font-size: 30px;
 }
@@ -77,10 +77,11 @@ h2{
 }
 
 .info{
+  font-size: 15px;
   text-align: center;
   padding-top: 1vh;
   background-color: #ffffff;
-  color: #171730;
+  color: #1b1b5b;
   height: 4vh;
   margin-left: 1.5vw;
   margin-right: 1.5vw;
@@ -103,12 +104,105 @@ h2{
   margin-right: 1vw;
   text-align: center;
   background-color: #ffffff;
-  color: #171730;
+  color: #1b1b5b;
   border-radius: 8px;
+  font-size: 13px;
 }
 
 .show a {
   text-decoration: none;
-  color: #171730
+  color: #1b1b5b;
   
 }
+
+
+/* PAGE SHOW DISPARU, TROUVE ET SHOW-USER*/
+.container2 {
+  background-color: #D2E8F1;
+  height: auto;
+  width: 75vw;
+  padding-top: 3vh;
+  margin-top: -2.8vh;
+  margin-left:  auto;
+  margin-right: auto;
+  padding-bottom: 10vh;
+  
+}
+
+.show-perdu {
+  border: 3px #1b1b5b solid;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 10vh;
+  background-color: #ffffff;
+  height: 130vh;
+}
+
+.detail {
+  display: flex;
+}
+
+.name {
+  text-align: center;
+  font-size: 28px;
+  color: #1b1b5b;
+  font-weight: bold;
+  margin-top: 8vh;
+}
+
+.imgShowAnimal {
+  width: 22vw;
+  height: 78vh;
+  object-fit: cover;
+  padding-left: 5vw;
+}
+
+.presentation {
+  padding-left: 5vw;
+  padding-top: 4vh;
+  font-size: 14px;
+}
+
+.date-show{
+  margin-top: 5vh;
+}
+
+.adresse, .contact {
+  margin-top: 5vh;
+}
+
+.sous-titre {
+  font-size: 15px;
+  color: #1b1b5b;
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 5vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  padding-left: 3vw;
+  padding-top: 3vh;
+  font-size: 14px;
+  background-color: #D2E8F1;
+  height: 10vh;
+}
+
+.btn-retour {
+  background-color: #D2E8F1;
+  color: #1b1b5b;
+  width: 15vw;
+  height: 6vh;
+  padding-top: 2vh;
+  padding-left: 2vw;
+  margin-left: 11.5vw;
+  margin-top: 10vh;
+}
+
+.btn-retour a {
+  color: #1b1b5b;
+  text-decoration: none;
+}
+
+
+
