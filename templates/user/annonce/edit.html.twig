@@ -3,10 +3,14 @@
 {% block title %}Edit Animals{% endblock %}
 
 {% block body %}
-    <h1>Edit Animals</h1>
+
+    <div class="form">
+    <h2>Modifier l'annonce</h2>
 
     {{ include('user/annonce/_form.html.twig', {'button_label': 'Modifier'}) }}
 
-    <a href="{{ path('annonces') }}">Retour à la liste</a>
+     <p class="btn-list"><a href="{{ path('annonces') }}">Retour à la liste</a></p>
+
+    </div>
     
 {% endblock %}

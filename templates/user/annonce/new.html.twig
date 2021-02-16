@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Animals{% endblock %}
+{% block title %}Nouvelle annonce{% endblock %}
 
 {% block body %}
-    <h1>Create new Animals</h1>
 
-    {{ include('user/annonce/_form.html.twig') }}
+    <div class="form">
+         <h2>Nouvelle annonce</h2>
 
-    <a href="{{ path('annonces') }}">back to list</a>
+        {{ include('user/annonce/_form.html.twig') }}
+
+        <p class="btn-list"><a href="{{ path('annonces') }}">Retour à la liste</a></p>
+
+    </div>
 {% endblock %}

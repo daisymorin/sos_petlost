@@ -6,7 +6,7 @@
 
 <h2>Mes annonces</h2>
 
- <a href="{{ path('new_annonce') }}">Create new</a>
+ <p class="btn-new"><a href="{{ path('new_annonce') }}">Publier une annonce</a></p>
  
  <div class="container">
 
@@ -15,12 +15,12 @@
     <div class="animals">
 
         {% if animal.missing %}
-            <p class="info">{{ animal.missing ? 'Diparus' : '' }} : {{ animal.name }}</p>
+            <p class="info">{{ animal.missing ? 'Disparus' : '' }} : {{ animal.name }}</p>
         {% else %}
              <p class="info">{{ animal.found ? 'Trouvé' : '' }} : {{ animal.name }}</p>
         {% endif %}
 
-        <p ><img class="imgAnimal" src="{{ vich_uploader_asset(animal.image, 'file') }}" alt="{{ animal.name }}" /></p>        
+        <p class="info-img"><img class="imgAnimal" src="{{ vich_uploader_asset(animal.image, 'file') }}" alt="{{ animal.name }}" /></p>        
         <p class="info">{{ animal.city }} ({{ animal.postcode }})</p>
 
         <div class="date-annonce">

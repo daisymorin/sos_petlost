@@ -39,7 +39,7 @@
                     {% endif %}
 
                     <p>Particularité: {{ animal.particularity }}</p>
-                    <p class="date-show">{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
+                    <p class="date-show">Perdu le {{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
 
                      <div class="adresse">
 
@@ -66,6 +66,8 @@
                     </div>
                 </div>
             </div>
+
+             <p class="description">{{ animal.description }}</p>
         </div>
     </div>
 
