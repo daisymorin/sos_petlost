@@ -44,7 +44,7 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover, .show a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover {
+nav a:hover, .show a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover {
   color: #191970;
   border-bottom: 2px solid #191970;
   
@@ -227,7 +227,7 @@ h2{
   font-size: 16px;
 }
 
-/* FORMULAIRE CREATE ANNONCE*/
+/* FORMULAIRE CREATE ANNONCE, EDIT*/
 
 .form {
   margin-left: 10vw;
@@ -235,7 +235,6 @@ h2{
   padding-left: 3vw;
   border: 3px #1b1b5b solid;
   color: #171730;
-  
 }
 .checkbox {
   display: flex;
@@ -334,6 +333,79 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
 
 .vich-file > div:nth-child(2){
   margin-top: 3vh;
+}
+
+/* FORMULAIRE CONEXION ET INSCRIPTION*/
+
+.page-connexion{
+  position: relative; 
+  height: 90vh;
+  margin-top: -11vh;
+  padding-top: 8vh;
+}
+.page-connexion::before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url(../images/image.jpg);
+  background-size: cover;
+  opacity: 0.5;
+}
+
+.page-connexion > form:nth-child(1) {
+  z-index: 2;
+  position: relative; 
+  margin-left: 9vw;
+  margin-right: 8vw;
+}
+
+.page-connexion > form:nth-child(1) > label:nth-child(2),.page-connexion > form:nth-child(1) > label:nth-child(4) {
+  margin-left: 5vw;
+  color: #1b1b5b;;
+  font-weight: bold;
+}
+
+#inputEmail, #inputPassword {
+  margin-left: 2vw;
+  margin-top: 3vh;
+  border: 1px #1b1b5b solid;
+  height: 6vh;
+}
+
+.login {
+  margin-left: 4vw;
+  height: 6vh;
+  width: 10vw;
+  border: 1px #1b1b5b solid;
+  color: #1b1b5b;;
+}
+
+.create-compte {
+  z-index: 2;
+  position: relative; 
+  text-align: center;
+  margin-top: 20vh;
+  color: #1b1b5b;;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.btn-register {
+  background-color: #ffffff;
+  width: 20vw;
+  height: 7vh;
+  padding-top: 2.5vh;
+  border: 1px #1b1b5b solid;
+  margin-left: 39vw;
+  margin-top: 5vh;
+}
+
+.btn-register a{
+  color: #1b1b5b;;
+  text-decoration: none;
 }
 
 
