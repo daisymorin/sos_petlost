@@ -26,8 +26,8 @@
         <div class="date-annonce">
     
             <p class="date">{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
-            <p class="show"><a href="{{ path('show-annonce', {'id': animal.id}) }}">Voir</a></p>
-            <p class="show"><a href="{{ path('edit-annonce', {'id': animal.id}) }}">Modifier</a></p>
+            <p class="date"><a href="{{ path('show-annonce', {'id': animal.id}) }}">Voir</a></p>
+            <p class="date"><a href="{{ path('edit-annonce', {'id': animal.id}) }}">Modifier</a></p>
         </div>
 
     </div>

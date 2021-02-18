@@ -44,7 +44,7 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover, .show a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover {
+nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover {
   color: #191970;
   border-bottom: 2px solid #191970;
   
@@ -55,23 +55,20 @@ nav a:hover, .show a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:
 h2{
   text-align: center;
   color: #1b1b5b;
-  margin-top: 12vh;
+  margin-top: 15vh;
   font-size: 35px;
 }
 .container{
     display: flex;
     height: 100vh;
-    margin-top: 8vh;
-    margin-left: 2vw;
-    margin-right: 3vw;
+    margin: 8vh 3vw 0 2vw;
 }
 
 .animals{
   width: 22vw;
   height: 55vh;
   background-color: #D2E8F1;
-  margin-right: 2vw;
-  margin-top: 5vh;
+  margin: 5vh 2vw 0 0;
 }
 
 .imgAnimal{
@@ -114,10 +111,19 @@ h2{
   font-size: 14px;
 }
 
-.show a {
-  text-decoration: none;
+.btn-delete{
+  width: 5.8vw;
+  background-color: #ffffff;
   color: #1b1b5b;
-  
+  font-size: 14px;
+  border-radius: 8px;
+  margin-top: 1.7vh;
+  margin-right: 3vw;
+}
+
+.date a {
+  text-decoration: none;
+  color: #1b1b5b; 
 }
 
 .btn-new {
@@ -125,10 +131,8 @@ h2{
   color: #1b1b5b;
   width: 13vw;
   height: 6vh;
-  padding-top: 2vh;
-  padding-left: 2vw;
-  margin-left: 3vw;
-  margin-top: 10vh;
+  padding: 2vh 0 0 2vw;
+  margin: 10vh 0 0 3vw;
 }
 
 .btn-new a {
@@ -143,19 +147,13 @@ h2{
   background-color: #D2E8F1;
   height: auto;
   width: 75vw;
-  padding-top: 3vh;
-  margin-top: -2.8vh;
-  margin-left:  auto;
-  margin-right: auto;
-  padding-bottom: 10vh;
-  
+  margin: -2.8vh auto 0 auto;
+  padding: 3vh 0 10vh 0; 
 }
 
 .show-perdu {
   border: 3px #1b1b5b solid;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  margin-top: 10vh;
+  margin: 10vh 5vw 0 5vw;
   background-color: #ffffff;
   height: 130vh;
 }
@@ -180,8 +178,7 @@ h2{
 }
 
 .presentation {
-  padding-left: 5vw;
-  padding-top: 1.8vh;
+  padding: 1.8vh 0 0 5vw;
   font-size: 15px;
 }
 
@@ -200,11 +197,8 @@ h2{
 }
 
 .description {
-  margin-top: 5vh;
-  margin-left: 5vw;
-  margin-right: 5vw;
-  padding-left: 3vw;
-  padding-top: 3vh;
+  margin: 5vh 5vw 0 5vw;
+  padding: 3vh 0 0 3vw;
   font-size: 15px;
   background-color: #D2E8F1;
   height: 10vh;
@@ -215,8 +209,7 @@ h2{
   color: #1b1b5b;
   width: 13vw;
   height: 6vh;
-  padding-top: 2vh;
-  padding-left: 2vw;
+  padding: 2vh 0 0 2vw;
   margin-left: 11.5vw;
   margin-top: 10vh;
 }
@@ -243,8 +236,7 @@ h2{
 
 .form-label {
   display: flex;
-  margin-top: 3vh;
-  margin-bottom: 2vh;
+  margin: 3vh 0 2vh 0;
 }
 
 .name-form {
@@ -355,22 +347,21 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   opacity: 0.5;
 }
 
-.page-connexion > form:nth-child(1) {
+.page-connexion > form:nth-child(1), .inscription {
   z-index: 2;
   position: relative; 
   margin-left: 9vw;
   margin-right: 8vw;
 }
 
-.page-connexion > form:nth-child(1) > label:nth-child(2),.page-connexion > form:nth-child(1) > label:nth-child(4) {
+.page-connexion > form:nth-child(1) > label:nth-child(2),.page-connexion > form:nth-child(1) > label:nth-child(4){
   margin-left: 5vw;
   color: #1b1b5b;;
   font-weight: bold;
 }
 
-#inputEmail, #inputPassword {
-  margin-left: 2vw;
-  margin-top: 3vh;
+#inputEmail, #inputPassword, #registration_form_lastname, #registration_form_firstname, #registration_form_phonenumber,#registration_form_plainPassword, #registration_form_email {
+  margin: 3vh 0 0 2vw;
   border: 1px #1b1b5b solid;
   height: 6vh;
 }
@@ -399,8 +390,7 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   height: 7vh;
   padding-top: 2.5vh;
   border: 1px #1b1b5b solid;
-  margin-left: 39vw;
-  margin-top: 5vh;
+  margin: 5vh 0 0 39vw;
 }
 
 .btn-register a{
@@ -408,6 +398,26 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   text-decoration: none;
 }
 
+.info-user, .info-auth {
+  display: flex;
+  margin-top:  10vh;
+}
+
+div.info-user:nth-child(1) > div:nth-child(2) > label:nth-child(1), div.info-user:nth-child(1) > div:nth-child(3) > label:nth-child(1), div.info-user:nth-child(2) > div:nth-child(2) > label:nth-child(1) {
+  margin-left: 3vw;
+  color: #1b1b5b;
+  font-weight: bold;
+}
+
+div.info-user:nth-child(1) > div:nth-child(1) > label:nth-child(1), div.info-user:nth-child(2) > div:nth-child(1) > label:nth-child(1), div.info-user:nth-child(3) > div:nth-child(1) > label:nth-child(1) {
+  color: #1b1b5b;
+  font-weight: bold;
+}
+
+#registration_form_agreeTerms {
+  margin-left: 2vw;
+  margin-top: 2vh;
+}
 
 
 

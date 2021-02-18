@@ -21,8 +21,9 @@ class AnimalsController extends AbstractController
      */
     public function index(AnimalsRepository $animalsRepository): Response
     {
+        $listAnimals = $animalsRepository->findBy([], ['date' => 'DESC']);
         return $this->render('admin/animals/index.html.twig', [
-            'animals' => $animalsRepository->findAll(),
+            'animals' => $listAnimals,
         ]);
     }
 
