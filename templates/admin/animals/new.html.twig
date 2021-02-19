@@ -3,9 +3,12 @@
 {% block title %}New Animals{% endblock %}
 
 {% block body %}
-    <h1>Create new Animals</h1>
 
-    {{ include('admin/animals/_form.html.twig') }}
+     <div class="form">
+        <h2>Nouvelle annonce</h2>
 
-    <a href="{{ path('animals_index') }}">back to list</a>
+        {{ include('admin/animals/_form.html.twig') }}
+
+         <p class="btn-list"><a href="{{ path('animals_index') }}">Retour à la liste</a></p>
+    </div>
 {% endblock %}

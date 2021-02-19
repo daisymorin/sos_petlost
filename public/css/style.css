@@ -4,12 +4,12 @@ body {
 }
 
 /* HEADER */
-header{
+header, footer{
   display: flex;
   background-color: #C1DDE8;
 }
 
-.titre_principale {
+.titre_principale, .titre_principale_footer {
   display: flex;
   flex-direction: column;
   margin-top: -3vh;
@@ -44,10 +44,36 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover {
+nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover,  .info-footer a:hover{
   color: #191970;
   border-bottom: 2px solid #191970;
   
+}
+
+/* FOOTER*/
+
+.logo-footer {
+  width: 15vw;
+  height: 15vh;
+  margin-left: 2vw;
+}
+
+.titre-footer {
+  font-size: 16px;
+  color: #171730;
+  margin-left: 5.2vw;
+  margin-top: -4vh;
+}
+
+.info-footer {
+  font-size: 14px;
+  color: #171730;
+  margin: 10vh 0 0 4vw;
+}
+
+.info-footer a {
+  color: #171730;
+  text-decoration: none;
 }
 
 /* PAGE ACCEUIL, DISPARU, TROUVE ET MES ANNONCES */
@@ -60,8 +86,8 @@ h2{
 }
 .container{
     display: flex;
-    height: 100vh;
-    margin: 8vh 3vw 0 2vw;
+    height: auto;
+    margin: 8vh 3vw 10vh 2vw;
 }
 
 .animals{
@@ -147,7 +173,7 @@ h2{
   background-color: #D2E8F1;
   height: auto;
   width: 75vw;
-  margin: -2.8vh auto 0 auto;
+  margin: -2.8vh auto 10vh auto;
   padding: 3vh 0 10vh 0; 
 }
 
