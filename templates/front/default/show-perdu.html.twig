@@ -50,6 +50,19 @@
          
         </div>
 
+        <p class="btn-new"><a href="{{ path('showCommentPerdu',{'id': animal.id}) }}">Publier un message</a></p>
+
+        <p>Commentaires</p>
+
+        {% for comment in animal.comment %}
+                 
+            <div class="show-comment">
+                <p class="comment-username">{{ comment.username ~ ' - ' ~ comment.createdAt|date('d/m/Y') }}</p>
+                <p class="comment">{{ comment.coment}}</p>
+            </div>
+        {% endfor %}
+
+
     </div>
     
 

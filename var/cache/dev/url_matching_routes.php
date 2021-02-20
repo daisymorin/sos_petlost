@@ -26,6 +26,8 @@ return [
         '/reset-password/check-email' => [[['_route' => 'app_check_email', '_controller' => 'App\\Controller\\ResetPasswordController::checkEmail'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/user/annonce' => [[['_route' => 'annonces', '_controller' => 'App\\Controller\\User\\UserController::index'], null, null, null, true, false, null]],
+        '/user/annonce/new-annonce' => [[['_route' => 'new_annonce', '_controller' => 'App\\Controller\\User\\UserController::newAnnonce'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -59,6 +61,10 @@ return [
                 .'|/perdu/([^/]++)(*:294)'
                 .'|/trouve/([^/]++)(*:318)'
                 .'|/reset\\-password/reset(?:/([^/]++))?(*:362)'
+                .'|/user/annonce/annonce/([^/]++)(?'
+                    .'|(*:403)'
+                    .'|/edit(*:416)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -77,8 +83,10 @@ return [
         269 => [[['_route' => 'animals_delete', '_controller' => 'App\\Controller\\AnimalsController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
         294 => [[['_route' => 'showPerdu', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         318 => [[['_route' => 'showTrouve', '_controller' => 'App\\Controller\\DefaultController::showTrouve'], ['id'], ['GET' => 0], null, false, true, null]],
-        362 => [
-            [['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null],
+        362 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        403 => [[['_route' => 'show-annonce', '_controller' => 'App\\Controller\\User\\UserController::showAnnonceUser'], ['id'], ['GET' => 0], null, false, true, null]],
+        416 => [
+            [['_route' => 'edit-annonce', '_controller' => 'App\\Controller\\User\\UserController::editAnnonceUser'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

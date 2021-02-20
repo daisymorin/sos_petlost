@@ -42,14 +42,71 @@ class __TwigTemplate_061c08b80f1e1a8a6673a75eb800a69b2f1658ed1b2d0c2be99e19f6210
         // line 1
         echo " <header>
 
+    <div class=\"titre_principale\">
+        <p>
+            <img class=\"logo\" src=\"../../../images/logo.png\" alt=\"Logo de Sospetlost\" />
+        </p>
+
+        <h1>SOS PETLOST</h1>
+
+    </div>
+
      <nav>
 
         <ul>
-            <li><a href=\"/animaux-disparus\">Animal Perdu</a></li>
-             <li><a href=\"/animaux-trouve\">Animal Retrouvé</a></li>
-              <li><a href=\"/animal-retrouve\">Actualités</a></li>
+            <li><a href=\"";
+        // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\">Accueil</a></li>
+            <li><a href=\"";
+        // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animaux-disparus");
+        echo "\">Animaux Perdu</a></li>
+             <li><a href=";
+        // line 17
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animaux-trouve");
+        echo ">Animaux Retrouvé</a></li>
+            <li><a href=\"/\">Actualités</a></li>
+
+             ";
+        // line 20
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 21
+            echo "                 <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("annonces");
+            echo "\">Mes annonces</a></li>
+             ";
+        }
+        // line 23
+        echo "
+            ";
+        // line 24
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
+            // line 25
+            echo "                 <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("animals_index");
+            echo "\">Admin</a></li>
+            ";
+        }
+        // line 27
+        echo "
+             ";
+        // line 28
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 29
+            echo "                <li><a href=\"/logout\">Déconnexion</a></li>
+            ";
+        } else {
+            // line 31
+            echo "                <li><a href=\"/login\">Connexion</a></li>
+                 <li><a href=\"/register\">Inscription</a></li>
+             ";
+        }
+        // line 34
+        echo "  
         </ul>
     </nav>
+
 </header>
 ";
         
@@ -65,24 +122,56 @@ class __TwigTemplate_061c08b80f1e1a8a6673a75eb800a69b2f1658ed1b2d0c2be99e19f6210
         return "front/navbar.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  106 => 34,  101 => 31,  97 => 29,  95 => 28,  92 => 27,  86 => 25,  84 => 24,  81 => 23,  75 => 21,  73 => 20,  67 => 17,  63 => 16,  59 => 15,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source(" <header>
 
+    <div class=\"titre_principale\">
+        <p>
+            <img class=\"logo\" src=\"../../../images/logo.png\" alt=\"Logo de Sospetlost\" />
+        </p>
+
+        <h1>SOS PETLOST</h1>
+
+    </div>
+
      <nav>
 
         <ul>
-            <li><a href=\"/animaux-disparus\">Animal Perdu</a></li>
-             <li><a href=\"/animaux-trouve\">Animal Retrouvé</a></li>
-              <li><a href=\"/animal-retrouve\">Actualités</a></li>
+            <li><a href=\"{{path('home')}}\">Accueil</a></li>
+            <li><a href=\"{{path('animaux-disparus')}}\">Animaux Perdu</a></li>
+             <li><a href={{path('animaux-trouve')}}>Animaux Retrouvé</a></li>
+            <li><a href=\"/\">Actualités</a></li>
+
+             {% if is_granted('ROLE_USER') %}
+                 <li><a href=\"{{path('annonces')}}\">Mes annonces</a></li>
+             {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+                 <li><a href=\"{{path('animals_index')}}\">Admin</a></li>
+            {% endif %}
+
+             {% if is_granted('ROLE_USER') %}
+                <li><a href=\"/logout\">Déconnexion</a></li>
+            {% else %}
+                <li><a href=\"/login\">Connexion</a></li>
+                 <li><a href=\"/register\">Inscription</a></li>
+             {% endif %}
+  
         </ul>
     </nav>
+
 </header>
-", "front/navbar.html.twig", "/opt/lampp/htdocs/sos_petlost/templates/front/navbar.html.twig");
+", "front/navbar.html.twig", "/opt/lampp/htdocs/sos_petlostcopie/templates/front/navbar.html.twig");
     }
 }

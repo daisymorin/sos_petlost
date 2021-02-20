@@ -167,7 +167,6 @@ h2{
   font-size: 18px;
 }
 
-
 /* PAGE SHOW DISPARU, TROUVE ET SHOW-USER*/
 .container2 {
   background-color: #D2E8F1;
@@ -182,6 +181,13 @@ h2{
   margin: 10vh 5vw 0 5vw;
   background-color: #ffffff;
   height: 130vh;
+}
+
+.show-comment {
+  border: 2px #1b1b5b solid;
+  margin: 5vh 5vw 0 5vw;
+  background-color: #ffffff;
+  height: auto;
 }
 
 .detail {
@@ -228,6 +234,17 @@ h2{
   font-size: 15px;
   background-color: #D2E8F1;
   height: 10vh;
+}
+
+.comment {
+  font-size: 15px;
+  padding-left: 1vw;
+}
+
+.comment-username {
+  font-size: 15px;
+  color: #1b1b5b;
+  padding-left: 1vw;
 }
 
 .btn-retour {

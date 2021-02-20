@@ -86,61 +86,91 @@ class __TwigTemplate_1586e4e375026c15963b9ed2492bd5603d60568adcac967f45d6f6a549b
 
         // line 6
         echo "
-<h1>Les dernières publications</h1>
+
+
+<h2>Les dernières publications</h2>
+
+    <p class=\"btn-new\"><a href=\"";
+        // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        echo "\">Publier une annonce</a></p>
 
 <div class=\"container\">
 
     ";
-        // line 11
+        // line 15
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["animals"]) || array_key_exists("animals", $context) ? $context["animals"] : (function () { throw new RuntimeError('Variable "animals" does not exist.', 11, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["animals"]) || array_key_exists("animals", $context) ? $context["animals"] : (function () { throw new RuntimeError('Variable "animals" does not exist.', 15, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["animal"]) {
-            // line 12
+            // line 16
             echo "
     <div class=\"animals\">
 
-        <p>";
-            // line 15
-            echo ((twig_get_attribute($this->env, $this->source, $context["animal"], "missing", [], "any", false, false, false, 15)) ? ("Diparus") : (""));
-            echo "</p>
-        <p>";
-            // line 16
-            echo ((twig_get_attribute($this->env, $this->source, $context["animal"], "found", [], "any", false, false, false, 16)) ? ("Trouvé") : (""));
-            echo "</p>
-        <p ><img class=\"imgAnimal\" src=\"";
-            // line 17
-            echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset(twig_get_attribute($this->env, $this->source, $context["animal"], "image", [], "any", false, false, false, 17), "file"), "html", null, true);
-            echo "\" alt=\"";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 17), "html", null, true);
-            echo "\" /></p>        
-        <p>";
-            // line 18
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 18), "html", null, true);
-            echo "</p>
-        <p>";
+        ";
             // line 19
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "city", [], "any", false, false, false, 19), "html", null, true);
-            echo "</p>
-        <p>";
-            // line 20
-            ((twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 20)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 20), "d/m/Y"), "html", null, true))) : (print ("")));
-            echo "</p>
-        <p>";
-            // line 21
-            if (twig_get_attribute($this->env, $this->source, $context["animal"], "missing", [], "any", false, false, false, 21)) {
-                echo "<a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showPerdu", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 21)]), "html", null, true);
-                echo "\">Voir</a>
-            ";
+            if (twig_get_attribute($this->env, $this->source, $context["animal"], "missing", [], "any", false, false, false, 19)) {
+                // line 20
+                echo "            <p class=\"info\">";
+                echo ((twig_get_attribute($this->env, $this->source, $context["animal"], "missing", [], "any", false, false, false, 20)) ? ("Disparus") : (""));
+                echo " : ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 20), "html", null, true);
+                echo "</p>
+        ";
             } else {
                 // line 22
-                echo " <a href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showTrouve", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 22)]), "html", null, true);
-                echo "\">Voir</a></p>
-            ";
+                echo "             <p class=\"info\">";
+                echo ((twig_get_attribute($this->env, $this->source, $context["animal"], "found", [], "any", false, false, false, 22)) ? ("Trouvé") : (""));
+                echo " : ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 22), "html", null, true);
+                echo "</p>
+        ";
             }
             // line 24
             echo "
+        <p class=\"info-img\" ><img class=\"imgAnimal\" src=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset(twig_get_attribute($this->env, $this->source, $context["animal"], "image", [], "any", false, false, false, 25), "file"), "html", null, true);
+            echo "\" alt=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 25), "html", null, true);
+            echo "\" /></p>        
+        <p class=\"info\">";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "city", [], "any", false, false, false, 26), "html", null, true);
+            echo " (";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "postcode", [], "any", false, false, false, 26), "html", null, true);
+            echo ")</p>
+
+
+        <div class=\"date-annonce\">
+            
+            <p class=\"date\">";
+            // line 31
+            ((twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 31)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 31), "d/m/Y"), "html", null, true))) : (print ("")));
+            echo "</p>
+       
+
+            <p class=\"date\">
+                ";
+            // line 35
+            if (twig_get_attribute($this->env, $this->source, $context["animal"], "missing", [], "any", false, false, false, 35)) {
+                // line 36
+                echo "                    <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showPerdu", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 36)]), "html", null, true);
+                echo "\">Voir</a>
+                ";
+            } else {
+                // line 37
+                echo " 
+                     <a href=\"";
+                // line 38
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showTrouve", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 38)]), "html", null, true);
+                echo "\">Voir</a>
+                ";
+            }
+            // line 40
+            echo "            </p>
+         </div>
+
     </div>
 
     ";
@@ -148,7 +178,7 @@ class __TwigTemplate_1586e4e375026c15963b9ed2492bd5603d60568adcac967f45d6f6a549b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['animal'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 46
         echo "
 </div>
 ";
@@ -172,7 +202,7 @@ class __TwigTemplate_1586e4e375026c15963b9ed2492bd5603d60568adcac967f45d6f6a549b
 
     public function getDebugInfo()
     {
-        return array (  152 => 28,  143 => 24,  137 => 22,  130 => 21,  126 => 20,  122 => 19,  118 => 18,  112 => 17,  108 => 16,  104 => 15,  99 => 12,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  182 => 46,  171 => 40,  166 => 38,  163 => 37,  157 => 36,  155 => 35,  148 => 31,  138 => 26,  132 => 25,  129 => 24,  121 => 22,  113 => 20,  111 => 19,  106 => 16,  102 => 15,  95 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -183,7 +213,11 @@ class __TwigTemplate_1586e4e375026c15963b9ed2492bd5603d60568adcac967f45d6f6a549b
 
 {% block content %}
 
-<h1>Les dernières publications</h1>
+
+
+<h2>Les dernières publications</h2>
+
+    <p class=\"btn-new\"><a href=\"{{ path('app_login') }}\">Publier une annonce</a></p>
 
 <div class=\"container\">
 
@@ -191,15 +225,29 @@ class __TwigTemplate_1586e4e375026c15963b9ed2492bd5603d60568adcac967f45d6f6a549b
 
     <div class=\"animals\">
 
-        <p>{{ animal.missing ? 'Diparus' : '' }}</p>
-        <p>{{ animal.found ? 'Trouvé' : '' }}</p>
-        <p ><img class=\"imgAnimal\" src=\"{{ vich_uploader_asset(animal.image, 'file') }}\" alt=\"{{ animal.name }}\" /></p>        
-        <p>{{ animal.name }}</p>
-        <p>{{ animal.city }}</p>
-        <p>{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
-        <p>{% if animal.missing %}<a href=\"{{ path('showPerdu', {'id': animal.id}) }}\">Voir</a>
-            {% else %} <a href=\"{{ path('showTrouve', {'id': animal.id}) }}\">Voir</a></p>
-            {% endif %}
+        {% if animal.missing %}
+            <p class=\"info\">{{ animal.missing ? 'Disparus' : '' }} : {{ animal.name }}</p>
+        {% else %}
+             <p class=\"info\">{{ animal.found ? 'Trouvé' : '' }} : {{ animal.name }}</p>
+        {% endif %}
+
+        <p class=\"info-img\" ><img class=\"imgAnimal\" src=\"{{ vich_uploader_asset(animal.image, 'file') }}\" alt=\"{{ animal.name }}\" /></p>        
+        <p class=\"info\">{{ animal.city }} ({{ animal.postcode }})</p>
+
+
+        <div class=\"date-annonce\">
+            
+            <p class=\"date\">{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
+       
+
+            <p class=\"date\">
+                {% if animal.missing %}
+                    <a href=\"{{ path('showPerdu', {'id': animal.id}) }}\">Voir</a>
+                {% else %} 
+                     <a href=\"{{ path('showTrouve', {'id': animal.id}) }}\">Voir</a>
+                {% endif %}
+            </p>
+         </div>
 
     </div>
 
@@ -207,6 +255,6 @@ class __TwigTemplate_1586e4e375026c15963b9ed2492bd5603d60568adcac967f45d6f6a549b
 
 </div>
 {% endblock %}
-", "front/default/home.html.twig", "/opt/lampp/htdocs/sos_petlost/templates/front/default/home.html.twig");
+", "front/default/home.html.twig", "/opt/lampp/htdocs/sos_petlostcopie/templates/front/default/home.html.twig");
     }
 }

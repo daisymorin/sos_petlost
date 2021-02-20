@@ -620,3 +620,12 @@ b23b15,127.0.0.1,GET,http://sos-petlost.local/trouve/5,1612363279,,200
 0f5dd9,127.0.0.1,GET,http://sos-petlost.local/favicon.ico,1612363307,50e9b0,404
 50e9b0,127.0.0.1,GET,http://sos-petlost.local/favicon.ico,1612363307,,404
 70d1b2,127.0.0.1,GET,http://sos-petlost.local/,1612363314,,200
+7f8953,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/,1613745672,,200
+3e9a96,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/,1613745702,,200
+1c8f64,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/animaux-disparus,1613745704,,200
+37a0c1,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/animaux-disparus,1613745709,,200
+e30149,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/,1613745728,,200
+41514f,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/trouve/7,1613745731,,200
+e3c61c,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/login,1613745743,,200
+af73c5,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/animaux-disparus,1613745754,,200
+2ad794,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/login,1613745779,,200

@@ -37,4 +37,8 @@ return [
     'app_reset_password' => [['token'], ['token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/reset-password/reset']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'annonces' => [[], ['_controller' => 'App\\Controller\\User\\UserController::index'], [], [['text', '/user/annonce/']], [], []],
+    'new_annonce' => [[], ['_controller' => 'App\\Controller\\User\\UserController::newAnnonce'], [], [['text', '/user/annonce/new-annonce']], [], []],
+    'show-annonce' => [['id'], ['_controller' => 'App\\Controller\\User\\UserController::showAnnonceUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/annonce/annonce']], [], []],
+    'edit-annonce' => [['id'], ['_controller' => 'App\\Controller\\User\\UserController::editAnnonceUser'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/user/annonce/annonce']], [], []],
 ];
