@@ -66,7 +66,7 @@ class __TwigTemplate_aa59f6954908839429ac91a5aa2fb5d6701dd468d71103fe25572edbbce
 
         // line 4
         echo "
-<h1>Les alertes Découvertes</h1>
+<h2>Les alertes Découvertes</h2>
 
 <div class=\"container\">
 
@@ -79,28 +79,34 @@ class __TwigTemplate_aa59f6954908839429ac91a5aa2fb5d6701dd468d71103fe25572edbbce
             echo "
     <div class=\"animals\">
 
-        <p>";
+        <p class=\"info\">";
             // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 13), "html", null, true);
             echo "</p>
-        <p ><img class=\"imgAnimal\" src=\"";
+        <p class=\"info-img\"><img class=\"imgAnimal\" src=\"";
             // line 14
             echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset(twig_get_attribute($this->env, $this->source, $context["animal"], "image", [], "any", false, false, false, 14), "file"), "html", null, true);
             echo "\" alt=\"";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "name", [], "any", false, false, false, 14), "html", null, true);
             echo "\" /></p>        
-        <p>";
+        <p class=\"info\" >";
             // line 15
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "city", [], "any", false, false, false, 15), "html", null, true);
+            echo " (";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "postcode", [], "any", false, false, false, 15), "html", null, true);
+            echo ") </p>
+
+        <div class=\"date-annonce\">
+
+            <p class=\"date\">";
+            // line 19
+            ((twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 19)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 19), "d/m/Y"), "html", null, true))) : (print ("")));
             echo "</p>
-        <p>";
-            // line 16
-            ((twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 16)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["animal"], "date", [], "any", false, false, false, 16), "d/m/Y"), "html", null, true))) : (print ("")));
-            echo "</p>
-        <p><a href=\"";
-            // line 17
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showTrouve", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 17)]), "html", null, true);
+            <p class=\"date\" ><a href=\"";
+            // line 20
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showTrouve", ["id" => twig_get_attribute($this->env, $this->source, $context["animal"], "id", [], "any", false, false, false, 20)]), "html", null, true);
             echo "\">Voir</a>
+        </div>
     
     </div>
 
@@ -109,7 +115,7 @@ class __TwigTemplate_aa59f6954908839429ac91a5aa2fb5d6701dd468d71103fe25572edbbce
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['animal'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 22
+        // line 26
         echo "
 </div>
 ";
@@ -133,7 +139,7 @@ class __TwigTemplate_aa59f6954908839429ac91a5aa2fb5d6701dd468d71103fe25572edbbce
 
     public function getDebugInfo()
     {
-        return array (  113 => 22,  102 => 17,  98 => 16,  94 => 15,  88 => 14,  84 => 13,  79 => 10,  75 => 9,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  119 => 26,  107 => 20,  103 => 19,  94 => 15,  88 => 14,  84 => 13,  79 => 10,  75 => 9,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -142,7 +148,7 @@ class __TwigTemplate_aa59f6954908839429ac91a5aa2fb5d6701dd468d71103fe25572edbbce
 
 {% block content %}
 
-<h1>Les alertes Découvertes</h1>
+<h2>Les alertes Découvertes</h2>
 
 <div class=\"container\">
 
@@ -150,17 +156,21 @@ class __TwigTemplate_aa59f6954908839429ac91a5aa2fb5d6701dd468d71103fe25572edbbce
 
     <div class=\"animals\">
 
-        <p>{{ animal.name }}</p>
-        <p ><img class=\"imgAnimal\" src=\"{{ vich_uploader_asset(animal.image, 'file') }}\" alt=\"{{ animal.name }}\" /></p>        
-        <p>{{ animal.city }}</p>
-        <p>{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
-        <p><a href=\"{{ path('showTrouve', {'id': animal.id}) }}\">Voir</a>
+        <p class=\"info\">{{ animal.name }}</p>
+        <p class=\"info-img\"><img class=\"imgAnimal\" src=\"{{ vich_uploader_asset(animal.image, 'file') }}\" alt=\"{{ animal.name }}\" /></p>        
+        <p class=\"info\" >{{ animal.city }} ({{ animal.postcode }}) </p>
+
+        <div class=\"date-annonce\">
+
+            <p class=\"date\">{{ animal.date ? animal.date|date('d/m/Y') : '' }}</p>
+            <p class=\"date\" ><a href=\"{{ path('showTrouve', {'id': animal.id}) }}\">Voir</a>
+        </div>
     
     </div>
 
     {% endfor %}
 
 </div>
-{% endblock %}", "front/default/animaux-trouves.html.twig", "/opt/lampp/htdocs/sos_petlost/templates/front/default/animaux-trouves.html.twig");
+{% endblock %}", "front/default/animaux-trouves.html.twig", "/opt/lampp/htdocs/sos_petlostcopie/templates/front/default/animaux-trouves.html.twig");
     }
 }

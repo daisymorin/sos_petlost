@@ -30,6 +30,8 @@ return [
     'animaux-trouve' => [[], ['_controller' => 'App\\Controller\\DefaultController::animalFound'], [], [['text', '/animaux-trouve']], [], []],
     'showPerdu' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/perdu']], [], []],
     'showTrouve' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::showTrouve'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/trouve']], [], []],
+    'showCommentTrouve' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::showCommentTrouve'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/trouve-comment']], [], []],
+    'showCommentPerdu' => [['id'], ['_controller' => 'App\\Controller\\DefaultController::showCommentPerdu'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/perdu-comment']], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], []],
     'app_verify_email' => [[], ['_controller' => 'App\\Controller\\RegistrationController::verifyUserEmail'], [], [['text', '/verify/email']], [], []],
     'app_forgot_password_request' => [[], ['_controller' => 'App\\Controller\\ResetPasswordController::request'], [], [['text', '/reset-password']], [], []],

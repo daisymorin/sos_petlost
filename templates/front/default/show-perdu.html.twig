@@ -50,9 +50,8 @@
          
         </div>
 
-        <p class="btn-new"><a href="{{ path('showCommentPerdu',{'id': animal.id}) }}">Publier un message</a></p>
-
-        <p>Commentaires</p>
+        <p class="titre-comment">Commentaires</p>
+        <p class="btn-comment"><a href="{{ path('showCommentPerdu',{'id': animal.id}) }}">Publier un message</a></p>
 
         {% for comment in animal.comment %}
                  

@@ -44,7 +44,7 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover,  .info-footer a:hover{
+nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover,  .info-footer a:hover, .btn-comment a:hover, .btn-return-show a:hover {
   color: #191970;
   border-bottom: 2px solid #191970;
   
@@ -161,7 +161,7 @@ h2{
   margin: 10vh 0 0 3vw;
 }
 
-.btn-new a {
+.btn-new a, .btn-comment a{
   color: #1b1b5b;
   text-decoration: none;
   font-size: 18px;
@@ -257,13 +257,38 @@ h2{
   margin-top: 10vh;
 }
 
-.btn-retour a {
+.btn-retour a, .btn-return-show a {
   color: #1b1b5b;
   text-decoration: none;
   font-size: 16px;
 }
 
-/* FORMULAIRE CREATE ANNONCE, EDIT*/
+.btn-comment {
+  background-color: #ffffff;
+  color: #1b1b5b;
+  width: 13vw;
+  height: 6vh;
+  padding: 2vh 0 0 2vw;
+  margin: 3vh 0 0 5vw;
+}
+
+.titre-comment {
+  text-align: center;
+  color: #1b1b5b;
+  font-size: 22px;
+  margin-top: 15vh;
+}
+
+.btn-return-show {
+  background-color: #D2E8F1;
+  color: #1b1b5b;
+  width: 11vw;
+  height: 7vh;
+  padding: 2vh 0 0 2vw;
+  margin-top: 5vh;
+}
+
+/* FORMULAIRE CREATE ANNONCE, EDIT, MESSAGE*/
 
 .form {
   margin-left: 10vw;
@@ -288,7 +313,7 @@ h2{
 }
 
 #animals_name, #animals_race, #animals_sexe, #animals_color {
-  width: 14vw;
+  width: 15vw;
   height: 6vh;
   margin-right: 4vw;
   margin-left: -0.3vw;
@@ -303,7 +328,7 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   margin-left: 3vw;
 }
 
-#animals_description, #animals_particularity {
+#animals_description, #animals_particularity, #comment_coment {
   width: 72vw;
   height: 25vh;
   border: 1px #1b1b5b solid;
@@ -369,6 +394,15 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
 .vich-file > div:nth-child(2){
   margin-top: 3vh;
 }
+
+#comment_username{
+  margin: 3vh 0 0 2vw;
+  border: 1px #1b1b5b solid;
+  height: 6vh;
+}
+
+
+
 
 /* FORMULAIRE CONEXION ET INSCRIPTION*/
 

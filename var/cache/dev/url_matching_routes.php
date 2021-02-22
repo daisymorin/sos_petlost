@@ -58,12 +58,18 @@ return [
                         .'|(*:269)'
                     .')'
                 .')'
-                .'|/perdu/([^/]++)(*:294)'
-                .'|/trouve/([^/]++)(*:318)'
-                .'|/reset\\-password/reset(?:/([^/]++))?(*:362)'
+                .'|/perdu(?'
+                    .'|/([^/]++)(*:297)'
+                    .'|\\-comment/([^/]++)(*:323)'
+                .')'
+                .'|/trouve(?'
+                    .'|/([^/]++)(*:351)'
+                    .'|\\-comment/([^/]++)(*:377)'
+                .')'
+                .'|/reset\\-password/reset(?:/([^/]++))?(*:422)'
                 .'|/user/annonce/annonce/([^/]++)(?'
-                    .'|(*:403)'
-                    .'|/edit(*:416)'
+                    .'|(*:463)'
+                    .'|/edit(*:476)'
                 .')'
             .')/?$}sDu',
     ],
@@ -81,11 +87,13 @@ return [
         248 => [[['_route' => 'animals_show', '_controller' => 'App\\Controller\\AnimalsController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         261 => [[['_route' => 'animals_edit', '_controller' => 'App\\Controller\\AnimalsController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         269 => [[['_route' => 'animals_delete', '_controller' => 'App\\Controller\\AnimalsController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        294 => [[['_route' => 'showPerdu', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        318 => [[['_route' => 'showTrouve', '_controller' => 'App\\Controller\\DefaultController::showTrouve'], ['id'], ['GET' => 0], null, false, true, null]],
-        362 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
-        403 => [[['_route' => 'show-annonce', '_controller' => 'App\\Controller\\User\\UserController::showAnnonceUser'], ['id'], ['GET' => 0], null, false, true, null]],
-        416 => [
+        297 => [[['_route' => 'showPerdu', '_controller' => 'App\\Controller\\DefaultController::show'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        323 => [[['_route' => 'showCommentPerdu', '_controller' => 'App\\Controller\\DefaultController::showCommentPerdu'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        351 => [[['_route' => 'showTrouve', '_controller' => 'App\\Controller\\DefaultController::showTrouve'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        377 => [[['_route' => 'showCommentTrouve', '_controller' => 'App\\Controller\\DefaultController::showCommentTrouve'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        422 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        463 => [[['_route' => 'show-annonce', '_controller' => 'App\\Controller\\User\\UserController::showAnnonceUser'], ['id'], ['GET' => 0], null, false, true, null]],
+        476 => [
             [['_route' => 'edit-annonce', '_controller' => 'App\\Controller\\User\\UserController::editAnnonceUser'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],

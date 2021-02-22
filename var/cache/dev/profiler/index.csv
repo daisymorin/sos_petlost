@@ -629,3 +629,10 @@ e30149,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/,1613745728,,200
 e3c61c,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/login,1613745743,,200
 af73c5,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/animaux-disparus,1613745754,,200
 2ad794,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/login,1613745779,,200
+a5ec48,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/,1613831437,,200
+26dd97,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/animaux-disparus,1613831441,,200
+8e7414,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/animaux-disparus,1613831446,,200
+f8bd4d,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/perdu/4,1613831488,,200
+bc9140,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/perdu-comment/4,1613831492,,200
+61566d,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/animaux-trouve,1613831499,,200
+adb5f4,127.0.0.1,GET,http://localhost/sos_petlostcopie/public/,1613831511,,200

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <p class="btn-retour"><a href="{{ path('animaux-disparus') }}">Retour aux annonces</a></p>
+    <p class="btn-retour"><a href="{{ path('animaux-trouve') }}">Retour aux annonces</a></p>
 
     <div class="container2">
 
@@ -56,9 +56,9 @@
              <p class="description">{{ animal.description }}</p>
         </div>
 
-        <p class="btn-new"><a href="{{ path('showCommentTrouve',{'id': animal.id}) }}">Publier un message</a></p>
-
-        <p>Commentaires</p>
+         <p class="titre-comment">Commentaires</p>
+         
+        <p class="btn-comment"><a href="{{ path('showCommentTrouve',{'id': animal.id}) }}">Publier un message</a></p>
 
         {% for comment in animal.comment %}
                  
