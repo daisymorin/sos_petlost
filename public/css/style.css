@@ -44,7 +44,7 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover,  .info-footer a:hover, .btn-comment a:hover, .btn-return-show a:hover {
+nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:hover, .btn-register a:hover,  .info-footer a:hover, .btn-comment a:hover, .btn-return-show a:hover, .btn-actu a:hover {
   color: #191970;
   border-bottom: 2px solid #191970;
   
@@ -138,10 +138,10 @@ h2{
 }
 
 .btn-delete{
-  width: 5.8vw;
+  width: 5.7vw;
   background-color: #ffffff;
   color: #1b1b5b;
-  font-size: 14px;
+  font-size: 13px;
   border-radius: 8px;
   margin-top: 1.7vh;
   margin-right: 3vw;
@@ -401,9 +401,6 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   height: 6vh;
 }
 
-
-
-
 /* FORMULAIRE CONEXION ET INSCRIPTION*/
 
 .page-connexion{
@@ -427,8 +424,8 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
 .page-connexion > form:nth-child(1), .inscription {
   z-index: 2;
   position: relative; 
-  margin-left: 9vw;
-  margin-right: 8vw;
+  margin-left: 4vw;
+  margin-right: 3vw;
 }
 
 .page-connexion > form:nth-child(1) > label:nth-child(2),.page-connexion > form:nth-child(1) > label:nth-child(4){
@@ -441,6 +438,7 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   margin: 3vh 0 0 2vw;
   border: 1px #1b1b5b solid;
   height: 6vh;
+  width: 20vw;
 }
 
 .login {
@@ -496,5 +494,66 @@ div.info-user:nth-child(1) > div:nth-child(1) > label:nth-child(1), div.info-use
   margin-top: 2vh;
 }
 
+/* PAGE ACTUALITÉ */
+.container-actuality {
+  background-color: #D2E8F1;
+  margin: 8vh 12vw 0 12vw;
+  padding-top: 0.5vh;
+  height: 88vh;
+}
 
+.info-actuality {
+  border: 3px #1b1b5b solid;
+  background-color: #ffffff;
+  margin: 5vh 5vw 3vh 5vw;
+}
+.imgActuality {
+  width: 40vw;
+  height: 35vh;
+  object-fit: cover;
+  margin: 1vh 0 0 0;
+}
 
+.content {
+  margin: 5vh 4vw 0 3vw;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.date-actu {
+  margin-left: 3vw;
+  font-size: 15px;
+}
+
+.actu-show{
+  display: flex;
+  margin: -11vh 0 0 35vw;
+}
+
+.btn-actu{
+  margin-right: 2vw;
+  background-color: #D2E8F1;
+  width: 7vw;
+  height: 5vh;
+  padding: 2vh 0 0 1vw;
+}
+
+.btn-actu a {
+  color: #1b1b5b;
+  text-decoration: none;
+}
+
+.imgActualityShow{
+  width: 70vw;
+  height: 60vh;
+  object-fit: cover;
+  margin: 1vh 0 0 0;
+}
+
+.btn{
+  margin-top: 2.8vh;
+  background-color: #D2E8F1;
+  width: 7vw;
+  height: 7vh;
+  color: #1b1b5b;
+}

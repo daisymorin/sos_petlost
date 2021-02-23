@@ -20,8 +20,9 @@ class ActualityController extends AbstractController
      */
     public function index(ActualityRepository $actualityRepository): Response
     {
+        $listActuality = $actualityRepository->findBy([], ['created_at' => 'DESC']);
         return $this->render('admin/actuality/index.html.twig', [
-            'actualities' => $actualityRepository->findAll(),
+            'actualities' => $listActuality,
         ]);
     }
 
@@ -36,6 +37,7 @@ class ActualityController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $actuality->setCreatedAt(New \DateTime());
             $entityManager->persist($actuality);
             $entityManager->flush();
 
