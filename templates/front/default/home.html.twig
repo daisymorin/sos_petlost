@@ -4,8 +4,6 @@
 
 {% block content %}
 
-
-
 <h2>Les dernières publications</h2>
 
     <p class="btn-new"><a href="{{ path('app_login') }}">Publier une annonce</a></p>
@@ -43,6 +41,8 @@
     </div>
 
     {% endfor %}
+
+     {{ knp_pagination_render(animals) }}
 
 </div>
 {% endblock %}

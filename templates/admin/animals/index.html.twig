@@ -1,8 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout.html.twig' %}
+
 
 {% block title %}Animals index{% endblock %}
 
 {% block body %}
+    
     <h2>Toutes les publications</h2>
 
     <p class="btn-new"><a href="{{ path('animals_new') }}">Publier une annonce</a></p>
@@ -34,6 +36,7 @@
 
     {% endfor %}
 
+    {{ knp_pagination_render(animals) }}
 </div>
 
 {% endblock %}

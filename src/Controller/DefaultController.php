@@ -11,39 +11,57 @@ use App\Form\AnimalsType;
 use App\Entity\Animals;
 use App\Entity\Comment;
 use App\Form\CommentType;
+use App\Repository\ActualityRepository;
+use App\Entity\Actuality;
+use Knp\Component\Pager\PaginatorInterface;
 
 class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="home")
      */
-    public function index(AnimalsRepository $animalsRepository): Response
+    public function index(Request $request, PaginatorInterface $paginator, AnimalsRepository $animalsRepository): Response
     {
         $listAnimals = $animalsRepository->findBy([], ['date' => 'DESC'], 16);
+        $animals = $paginator->paginate(
+            $listAnimals, // Requête contenant les données à paginer (ici nos annonces)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            20 // Nombre de résultats par page
+        );
         return $this->render('front/default/home.html.twig', [
-            'animals' => $listAnimals,
+            'animals' => $animals,
         ]);
     }
 
     /**
      * @Route("/animaux-disparus", name="animaux-disparus")
      */
-    public function animalMissing(AnimalsRepository $animalsRepository): Response
+    public function animalMissing(Request $request, PaginatorInterface $paginator, AnimalsRepository $animalsRepository): Response
     {
         $listAnimals = $animalsRepository->findBy(['missing' => true], ['date' => 'DESC']);
+        $animals = $paginator->paginate(
+            $listAnimals, // Requête contenant les données à paginer (ici nos annonces)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            20 // Nombre de résultats par page
+        );
         return $this->render('front/default/animaux-perdus.html.twig', [
-            'animals' => $listAnimals,
+            'animals' => $animals,
         ]);
     }
 
     /**
      * @Route("/animaux-trouve", name="animaux-trouve")
      */
-    public function animalFound(AnimalsRepository $animalsRepository): Response
+    public function animalFound(Request $request, PaginatorInterface $paginator, AnimalsRepository $animalsRepository): Response
     {
         $listAnimals = $animalsRepository->findBy(['found' => true], ['date' => 'DESC']);
+        $animals = $paginator->paginate(
+            $listAnimals, // Requête contenant les données à paginer (ici nos annonces)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            20 // Nombre de résultats par page
+        );
         return $this->render('front/default/animaux-trouves.html.twig', [
-            'animals' => $listAnimals,
+            'animals' => $animals,
         ]);
     }
 
@@ -66,6 +84,32 @@ class DefaultController extends AbstractController
        
         return $this->render('front/default/show-trouve.html.twig', [
             'animal' => $animal,
+        ]);
+    }
+
+    /**
+     * @Route("/actualites", name="actualites")
+     */
+    public function actualites(Request $request, PaginatorInterface $paginator, ActualityRepository $actualityRepository): Response
+    {
+        $listActuality = $actualityRepository->findBy([], ['created_at' => 'DESC']);
+        $actualities = $paginator->paginate(
+            $listActuality, // Requête contenant les données à paginer (ici nos annonces)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            6 // Nombre de résultats par page
+        );
+        return $this->render('front/default/actualites.html.twig', [
+            'actualities' => $actualities,
+        ]);
+    }
+
+     /**
+     * @Route("/actualites/{id}", name="showActualite", methods={"GET"})
+     */
+    public function showActuality(Actuality $actuality): Response
+    {
+        return $this->render('front/default/actualite-show.html.twig', [
+            'actuality' => $actuality,
         ]);
     }
 

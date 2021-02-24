@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 
 
 /**
@@ -19,11 +20,16 @@ class AnimalsController extends AbstractController
     /**
      * @Route("/", name="animals_index", methods={"GET"})
      */
-    public function index(AnimalsRepository $animalsRepository): Response
+    public function index(Request $request, PaginatorInterface $paginator, AnimalsRepository $animalsRepository): Response
     {
         $listAnimals = $animalsRepository->findBy([], ['date' => 'DESC']);
+        $animals = $paginator->paginate(
+            $listAnimals, // Requête contenant les données à paginer (ici nos annonces)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            20 // Nombre de résultats par page
+        );
         return $this->render('admin/animals/index.html.twig', [
-            'animals' => $listAnimals,
+            'animals' => $animals,
         ]);
     }
 

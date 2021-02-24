@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @Route("admin/actuality")
@@ -18,11 +19,16 @@ class ActualityController extends AbstractController
     /**
      * @Route("/", name="actuality_index", methods={"GET"})
      */
-    public function index(ActualityRepository $actualityRepository): Response
+    public function index(Request $request, PaginatorInterface $paginator, ActualityRepository $actualityRepository): Response
     {
         $listActuality = $actualityRepository->findBy([], ['created_at' => 'DESC']);
+        $actualities = $paginator->paginate(
+            $listActuality, // Requête contenant les données à paginer (ici nos annonces)
+            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+            6 // Nombre de résultats par page
+        );
         return $this->render('admin/actuality/index.html.twig', [
-            'actualities' => $listActuality,
+            'actualities' => $actualities,
         ]);
     }
 
