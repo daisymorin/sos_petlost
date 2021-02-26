@@ -49,6 +49,42 @@ nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:
   border-bottom: 2px solid #191970; 
 }
 
+@media screen and (max-width: 1024px){
+  header{
+    height: 110px;
+  }
+
+  .titre_principale{
+    margin-top: -15px;
+    margin-left: 0;
+  }
+
+  .titre_principale h1 {
+    font-size: 16px;
+    margin-left: 50px;
+    padding-left: 10px;
+    margin-top: -20px;
+  }
+
+  nav ul {
+    margin-top: 50px;
+    padding-left: 0px;
+  }
+
+  nav li {
+    margin-right: 20px;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+
+  .logo{
+    height: 80px;
+    margin-left: 4px;
+  } 
+}
+
 /* FOOTER*/
 .logo-footer {
   width: 15vw;
@@ -74,7 +110,35 @@ nav a:hover, .date a:hover,  .btn-retour a:hover, .btn-new a:hover, .btn-list a:
   text-decoration: none;
 }
 
-/* PAGE ACCEUIL, DISPARU, TROUVE ET MES ANNONCES */
+@media screen and (max-width: 1024px){
+  footer{
+    height: 100px;
+  }
+
+  .logo-footer{
+    height: 80px;
+    margin-top: -10px;
+    margin-left: 0;
+  }
+
+  .titre-footer {
+    font-size: 13px;
+    margin-left: 15px;
+    margin-top: -20px;
+    padding-left: 5px;
+  }
+
+  .titre_principale_footer{
+    margin-top: -10px;
+  }
+
+  .info-footer {
+    font-size: 11px;
+    margin: 48px 18px 0 0;
+  }
+}
+
+/* PAGE ACCEUIL, DISPARU, TROUVE, MES ANNONCES ET ADMIN  */
 h2{
   text-align: center;
   color: #1b1b5b;
@@ -167,13 +231,13 @@ h2{
 
 @media screen and (max-width: 1024px){
   h2{
-    margin-top: 4vh;
+    margin-top: 80px;
   }
 
   .btn-new{
-    height: 4vh;
-    width: 13vw;
-    padding: 1vh 0 0 1vw;
+    height: 30px;
+    width: 130px;
+    padding: 0.5vh 0 0 1vw;
     margin: 3vh 0 0 3vw;
   }
 
@@ -185,24 +249,25 @@ h2{
     display: flex;
     flex-direction: column;
     height: auto;
-    margin-top: -2vh;
+    margin: -2vh 0 5vh 4vw;
 }
 
   .animals{
-    width: 55vw;
+    width: 50vw;
     height: auto;
     margin: 5vh 0 0 20vw;
   }
 
   .imgAnimal{
-    width: 30vw;
-    height: 30vh;
+    width: 150px;
+    height: 150px;
   }
 
   .info{
-    height: auto;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    height: 25px;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    padding-top: 0.5vh;
   }
 
   .date-annonce{
@@ -210,9 +275,10 @@ h2{
   }
 
   .date, .show {
-    height: auto;
+    height: 20px;
     margin-left: 4vw;
     margin-right: 4vw;
+    padding-top: 0.3vh;
   }
 }
 
@@ -336,17 +402,17 @@ h2{
 @media screen and (max-width: 1024px){
   .container2 {
     height: auto;
-    margin: -3.3vh auto 10vh auto;
+    margin: -1vh auto 10vh auto;
     padding: 3vh 0 6vh 0; 
   }
 
   .show-perdu {
-    margin: 3vh 5vw 0 5vw;
+    margin: 10px 5vw 0 5vw;
   }
 
   .btn-retour{
-    width: 15vw;
-    height: 4.5vh;
+    width: 130px;
+    height: 30px;
     padding: 1vh 0 0 1vw;
     margin-left: 11.7vw;
     margin-top: 7vh;
@@ -363,13 +429,13 @@ h2{
 
   .name, .titre-comment {
     font-size: 22px;
-    margin-top: 4vh;
+    margin-top: 40px;
   }
 
   .imgShowAnimal {
-    width: 40vw;
-    height: 40vh;
-    margin-left: 12vw;
+    width: 410px;
+    height: 300px;
+    margin-left: 11vw;
     padding: 0;
   }
 
@@ -379,18 +445,17 @@ h2{
   }
 
   .date-show, .adresse, .contact{
-    margin-top: 3vh;
+    margin-top: 30px;
   }
 
   .description {
-    margin: 3vh 5vw 2vh 5vw;
-    padding: 1vh 0 1vh 3vw;
+    margin: 3vh 5vw 3vh 5vw;
     height: auto;
   }
 
   .btn-comment {
-    width: 13vw;
-    height: 4.3vh;
+    width: 130px;
+    height: 30px;
     padding: 1vh 0 0 1vw;
     margin: 3vh 0 0 5vw;
   }
@@ -527,6 +592,8 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   border: 1px #1b1b5b solid;
 }
 
+
+
 @media screen and (max-width: 1024px){
   .form-label {
     display: flex;
@@ -535,21 +602,27 @@ div.checkbox:nth-child(1) > p:nth-child(2) > label:nth-child(1), div.checkbox:nt
   }
 
   #animals_name, #animals_race, #animals_sexe, #animals_color, #animals_address, #animals_city, #animals_postcode{
-    width: 25vw;
-    height: 5vh;
+    width: 300px;
+    height: 35px;
   }
 
   .btn-save {
     margin-top: 3vh;
-    height: 4vh;
-    width: 9vw;
+    height: 30px;
+    width: 130px;
   }
 
   .btn-list,.btn-return-show {
-    width: 13vw;
-    height: 4vh;
-    padding-top: 1.8vh;
+    width: 130px;
+    height: 30px;
+    padding-top: 7px;
     margin-top: 3vh;
+  }
+
+  #comment_username{
+    margin: 3vh 0 0 2vw;
+    height: 30px;
+    width: 200px;
   }
 }
 
@@ -642,43 +715,57 @@ div.info-user:nth-child(1) > div:nth-child(1) > label:nth-child(1), div.info-use
 }
 
 @media screen and (max-width: 1024px){
+  .page-connexion{
+    height: auto;
+  }
   .page-connexion > form:nth-child(1) > label:nth-child(2),.page-connexion > form:nth-child(1) > label:nth-child(4){
     margin: 4vh 0 0 1vw;
   }
 
   #inputEmail, #inputPassword{
-    margin: 2vh 0 0 4vw;
-    height: 5vh;
-    width: 30vw;
+    margin: 30px 0 0 10px;
+    height: 30px;
+    width: 230px;
   }
 
   .login {
     margin: 3vh 0 0 4vw;
-    height: 4vh;
-    width: 13vw;
+    height: 30px;
+    width: 110px;
   }
 
   .create-compte {
     z-index: 2;
     position: relative; 
     text-align: center;
-    margin-top: 10vh;
+    margin-top: 80px;
   }
 
   .btn-register {
-    width: 20vw;
-    height: 5vh;
-    padding-top: 1vh;
+    width: 200px;
+    height: 40px;
+    padding-top: 10px;
+    margin-top: 40px;
   }
 
   div.info-user:nth-child(1) > div:nth-child(1) > label:nth-child(1), div.info-user:nth-child(2) > div:nth-child(1) > label:nth-child(1), div.info-user:nth-child(3) > div:nth-child(1) > label:nth-child(1), div.info-user:nth-child(1) > div:nth-child(2) > label:nth-child(1), div.info-user:nth-child(1) > div:nth-child(3) > label:nth-child(1), div.info-user:nth-child(2) > div:nth-child(2) > label:nth-child(1) {
-    margin-left: 1vw;
+    margin-left: 13px;
   }
 
-  #registration_form_lastname, #registration_form_firstname, #registration_form_phonenumber,#registration_form_plainPassword, #registration_form_email{
-    height: 5vh;
-    width: 30vw;
-    margin-left: 1vw;
+  #registration_form_lastname, #registration_form_firstname, #registration_form_phonenumber{
+    height: 30px;
+    width: 240px;
+    margin: 20px 30px 0 0;
+  }
+
+  #registration_form_plainPassword, #registration_form_email{
+    height: 30px;
+    width: 240px;
+    margin: 20px 30px 0 30px;
+  }
+
+  .info-user{
+    margin-top: 50px;
   }
 }
 
@@ -761,25 +848,25 @@ div.info-user:nth-child(1) > div:nth-child(1) > label:nth-child(1), div.info-use
   }
 
   .imgActuality {
-    width: 30vw;
-    height: 25vh;
-    object-fit: cover;
+    width: 300px;
+    height: 130px;
     margin:  0;
   }
 
   .content {
     font-size: 15px;
+    margin-top: 25px;
   }
 
   .btn-actu-show{
-    margin: -3vh 0 2vh 50vw;
-    width: 10vw;
-    height: 3vh;
-    padding: 1vh 0 0 1vw;
+    margin: -40px 0 8px 470px;
+    width: 100px;
+    height: 25px;
+    padding: 6px 0 0 8px;
   }
 
   .imgActualityShow{
-    width: 60vw;
-    height: 50vh;
+    width: 600px;
+    height: 250px;
   }
 }

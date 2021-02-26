@@ -20,16 +20,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(Request $request, PaginatorInterface $paginator, AnimalsRepository $animalsRepository): Response
+    public function index(AnimalsRepository $animalsRepository): Response
     {
-        $listAnimals = $animalsRepository->findBy([], ['date' => 'DESC'], 16);
-        $animals = $paginator->paginate(
-            $listAnimals, // Requête contenant les données à paginer (ici nos annonces)
-            $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
-            20 // Nombre de résultats par page
-        );
+        $listAnimals = $animalsRepository->findBy([], ['date' => 'DESC'], 20);
         return $this->render('front/default/home.html.twig', [
-            'animals' => $animals,
+            'animals' => $listAnimals,
         ]);
     }
 

@@ -11,7 +11,9 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\Image;
+use App\Entity\User;
 
 
 class AnimalsType extends AbstractType
@@ -20,13 +22,15 @@ class AnimalsType extends AbstractType
     {
         $builder
             ->add('missing', CheckboxType::class, [
-                'label' => 'Disparu'
+                'label' => 'Disparu',
+                'required' => false,
             ])
             ->add('found', CheckboxType::class, [
-                'label' => 'Trouvé'
+                'label' => 'Trouvé',
+                'required' => false,
             ])
             ->add('name', TextType::class, [
-                'label' => 'Nom'
+                'label' => 'Nom',
             ])
             ->add('race')
             ->add('sexe')
@@ -34,14 +38,17 @@ class AnimalsType extends AbstractType
                 'label' => 'Couleur'
             ])
             ->add('microship', CheckboxType::class, [
-                'label' => 'Puce electronique'
+                'label' => 'Puce électronique',
+                'required' => false
             ])
             ->add('sterelise', CheckboxType::class, [
-                'label' => 'Stérélisé'
+                'label' => 'Stérélisé',
+                'required' => false,
             ])
             ->add('description')
             ->add('particularity', TextareaType::class, [
-                'label' => 'Particularité'
+                'label' => 'Particularité',
+                'required' => false,
             ])
             ->add('address',TextType::class, [
                 'label' => 'Adresse'
@@ -52,12 +59,12 @@ class AnimalsType extends AbstractType
             ->add('city', TextType::class, [
                 'label' => 'Ville'
             ])
-            ->add('date')
             ->add('animal_found', CheckboxType::class, [
-                'label' => 'Animal retrouvé'
+                'label' => 'Animal retrouvé',
+                'required' => false
             ])
-            ->add('image', ImageType::class)
-            ->add('user')
+            ->add('image', ImageType::class, [])
+                        
         ;
     }
 
